@@ -248,6 +248,68 @@ Standard UI components used across all Spedination documents and HTML:
 - Networker mindset, digitally forward
 - Industry: FTL transport, international freight forwarding, DACH + Eastern Europe
 
+
+## Writing Style (Spedination Tone)
+
+All written content must follow this style.
+
+### Core principles
+- Write direct and clear
+- Keep sentences short and easy to understand
+- Focus on real problems and real solutions
+- Avoid complexity and unnecessary wording
+- Sound like a real person, not like marketing
+
+### Tone
+- human
+- confident
+- practical
+- straightforward
+- slightly provocative if it fits
+
+### Avoid
+- generic marketing phrases
+- buzzwords
+- corporate language
+- empty claims
+- long explanations without substance
+
+### Write like this
+- describe real situations
+- explain simply
+- get to the point fast
+- use natural language
+- ask simple, open questions
+
+### Spedination writing pattern
+
+Use this structure when possible:
+
+1. Describe a real situation or problem
+2. Show what typically goes wrong
+3. Present a simple, practical solution
+4. Highlight what makes it different
+5. End with a simple, open question
+
+Keep it natural, not forced.
+
+### Do NOT write like this
+- "We offer innovative logistics solutions"
+- "Your reliable partner for transport"
+- "State-of-the-art services"
+
+### Example (correct)
+
+Most transports don’t fail because of the route.  
+They fail because too many people are involved.
+
+We keep it simple:  
+one truck, one contact, no transshipment.
+
+### Example (wrong)
+
+We provide efficient and innovative transport solutions tailored to your needs.
+
 ---
 
 *[github.com/kualko2/spedination](https://github.com/kualko2/spedination) · 2026*
