@@ -220,8 +220,8 @@ Standard UI components used across all Spedination documents and HTML:
 - SSE corners: `position: absolute`, min `8mm` from physical page edge
 
 ### Logo handling in HTML/code
-- The positiv PNG file has a **black background** (not transparent)
-- To use on white backgrounds: remove black pixels programmatically (replace pixels where R<30, G<30, B<30 with alpha=0)
+- All logo and icon PNG files have **transparent backgrounds** – ready to use on any background color
+- For dark backgrounds: use the `negativ` or `1c weiss` variant
 - The logo icon may be used standalone (without text) in any primary color, preferably Lemon Yellow
 
 
