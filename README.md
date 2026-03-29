@@ -4,7 +4,7 @@
 
 **Base URL for all assets:**
 ```
-https://raw.githubusercontent.com/kualko2/brand/main/
+https://raw.githubusercontent.com/kualko2/spedination/main/
 ```
 
 ---
@@ -57,11 +57,11 @@ https://raw.githubusercontent.com/kualko2/brand/main/
 
 | File | Description | URL |
 |---|---|---|
-| `Spedination-Logo-positiv-RGB.png` | Standard – for light backgrounds | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Logo-positiv-RGB.png) |
-| `Spedination-Logo-negativ-RGB.png` | Negative – for dark backgrounds | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Logo-negativ-RGB.png) |
-| `Spedination-Logo-1c schwarz-RGB.png` | 1-color black | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Logo-1c%20schwarz-RGB.png) |
-| `Spedination-Logo-1c weiss-RGB.png` | 1-color white | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Logo-1c%20weiss-RGB.png) |
-| `Spedination-Logo-alternativ-RGB.png` | Alternative layout | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Logo-alternativ-RGB.png) |
+| `Spedination-Logo-positiv-RGB.png` | Standard – for light backgrounds | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-positiv-RGB.png) |
+| `Spedination-Logo-negativ-RGB.png` | Negative – for dark backgrounds | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-negativ-RGB.png) |
+| `Spedination-Logo-1c schwarz-RGB.png` | 1-color black | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-1c%20schwarz-RGB.png) |
+| `Spedination-Logo-1c weiss-RGB.png` | 1-color white | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-1c%20weiss-RGB.png) |
+| `Spedination-Logo-alternativ-RGB.png` | Alternative layout | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-alternativ-RGB.png) |
 
 
 ### Icon Files (Logo mark only – without text)
@@ -70,11 +70,11 @@ Use for: **Social Media Profile Pictures, WhatsApp, Favicon, App Icons, Stamps**
 
 | File | Description | URL |
 |---|---|---|
-| `Spedination-Icon-gelb auf schwarz-RGB.png` | Yellow icon on black – **primary social media** | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Icon-gelb%20auf%20schwarz-RGB.png) |
-| `Spedination-Icon-gelb-RGB.png` | Yellow icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Icon-gelb-RGB.png) |
-| `Spedination-Icon-schwarz auf gelb-RGB.png` | Black icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Icon-schwarz%20auf%20gelb-RGB.png) |
-| `Spedination-Icon-schwarz-RGB.png` | Black icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Icon-schwarz-RGB.png) |
-| `Spedination-Icon-weiss auf gelb-RGB.png` | White icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-Icon-weiss%20auf%20gelb-RGB.png) |
+| `Spedination-Icon-gelb auf schwarz-RGB.png` | Yellow icon on black – **primary social media** | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb%20auf%20schwarz-RGB.png) |
+| `Spedination-Icon-gelb-RGB.png` | Yellow icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb-RGB.png) |
+| `Spedination-Icon-schwarz auf gelb-RGB.png` | Black icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz%20auf%20gelb-RGB.png) |
+| `Spedination-Icon-schwarz-RGB.png` | Black icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz-RGB.png) |
+| `Spedination-Icon-weiss auf gelb-RGB.png` | White icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-weiss%20auf%20gelb-RGB.png) |
 
 **Icon usage guidelines:**
 - Social Media / WhatsApp profile picture: `gelb auf schwarz` (most recognizable on dark UI)
@@ -149,21 +149,21 @@ Rounded corner brackets from the logo icon. Visual constant across all Spedinati
 
 | File | Position | URL |
 |---|---|---|
-| `Spedination-SSE-gelb-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-gelb-links%20oben-RGB.png) |
-| `Spedination-SSE-gelb-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-gelb-rechts%20oben-RGB.png) |
-| `Spedination-SSE-gelb-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-gelb-links%20unten-RGB.png) |
-| `Spedination-SSE-gelb-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-gelb-rechts%20unten-RGB.png) |
-| `Spedination-SSE-gelb-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-gelb-Mitte-RGB.png) |
+| `Spedination-SSE-gelb-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-links%20oben-RGB.png) |
+| `Spedination-SSE-gelb-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-rechts%20oben-RGB.png) |
+| `Spedination-SSE-gelb-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-links%20unten-RGB.png) |
+| `Spedination-SSE-gelb-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-rechts%20unten-RGB.png) |
+| `Spedination-SSE-gelb-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-Mitte-RGB.png) |
 
 ### White SSE (exception only)
 
 | File | Position | URL |
 |---|---|---|
-| `Spedination-SSE-weiss-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-weiss-links%20oben-RGB.png) |
-| `Spedination-SSE-weiss-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-weiss-rechts%20oben-RGB.png) |
-| `Spedination-SSE-weiss-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-weiss-links%20unten-RGB.png) |
-| `Spedination-SSE-weiss-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-weiss-rechts%20unten-RGB.png) |
-| `Spedination-SSE-weiss-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/brand/main/logos/Spedination-SSE-weiss-Mitte-RGB.png) |
+| `Spedination-SSE-weiss-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-links%20oben-RGB.png) |
+| `Spedination-SSE-weiss-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-rechts%20oben-RGB.png) |
+| `Spedination-SSE-weiss-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-links%20unten-RGB.png) |
+| `Spedination-SSE-weiss-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-rechts%20unten-RGB.png) |
+| `Spedination-SSE-weiss-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-Mitte-RGB.png) |
 
 ### SSE Rules
 - Default: **always Lemon Yellow**
@@ -250,4 +250,4 @@ Standard UI components used across all Spedination documents and HTML:
 
 ---
 
-*[github.com/kualko2/brand](https://github.com/kualko2/brand) · 2026*
+*[github.com/kualko2/spedination](https://github.com/kualko2/spedination) · 2026*
