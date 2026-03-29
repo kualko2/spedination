@@ -7,6 +7,26 @@
 https://raw.githubusercontent.com/kualko2/spedination/main/
 ```
 
+
+---
+
+## What Spedination does
+
+Spedination organizes full truck load (FTL) transports across Europe.
+
+Key principle:
+- one truck
+- no transshipment
+- one contact person
+
+Focus:
+- reliable execution
+- clear communication
+- fast problem solving
+
+This is not a generic logistics company.  
+It is a hands-on, digital freight setup with a strong operational focus.
+
 ---
 
 ## 1. Companies
@@ -63,31 +83,23 @@ https://raw.githubusercontent.com/kualko2/spedination/main/
 | `Spedination-Logo-1c weiss-RGB.png` | 1-color white | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-1c%20weiss-RGB.png) |
 | `Spedination-Logo-alternativ-RGB.png` | Alternative layout | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Logo-alternativ-RGB.png) |
 
-
-### Icon Files (Logo mark only – without text)
+### Icon Files
 
 Use for: **Social Media Profile Pictures, WhatsApp, Favicon, App Icons, Stamps**
 
 | File | Description | URL |
 |---|---|---|
-| `Spedination-Icon-gelb auf schwarz-RGB.png` | Yellow icon on black – **primary social media** | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb%20auf%20schwarz-RGB.png) |
-| `Spedination-Icon-gelb-RGB.png` | Yellow icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb-RGB.png) |
-| `Spedination-Icon-schwarz auf gelb-RGB.png` | Black icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz%20auf%20gelb-RGB.png) |
-| `Spedination-Icon-schwarz-RGB.png` | Black icon, transparent bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz-RGB.png) |
-| `Spedination-Icon-weiss auf gelb-RGB.png` | White icon on yellow bg | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-weiss%20auf%20gelb-RGB.png) |
-
-**Icon usage guidelines:**
-- Social Media / WhatsApp profile picture: `gelb auf schwarz` (most recognizable on dark UI)
-- Favicon / App icon light theme: `schwarz auf gelb`
-- Favicon / App icon dark theme: `gelb auf schwarz`
-- Watermark on photos: `gelb-RGB` or `weiss auf gelb` depending on background
-- Never use the icon in secondary or tertiary colors
+| `Spedination-Icon-gelb auf schwarz-RGB.png` | Yellow icon on black – primary social media | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb%20auf%20schwarz-RGB.png) |
+| `Spedination-Icon-gelb-RGB.png` | Yellow icon, transparent | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-gelb-RGB.png) |
+| `Spedination-Icon-schwarz auf gelb-RGB.png` | Black icon on yellow | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz%20auf%20gelb-RGB.png) |
+| `Spedination-Icon-schwarz-RGB.png` | Black icon, transparent | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-schwarz-RGB.png) |
+| `Spedination-Icon-weiss auf gelb-RGB.png` | White icon on yellow | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-Icon-weiss%20auf%20gelb-RGB.png) |
 
 ### Logo Rules – MANDATORY
-- Logo text: **ONLY Deep Black (#101921) or Plain White (#ffffff)** – never any other color
-- **Documents** (letters, forms, instructions): logo **top LEFT**
-- **Advertising** (banners, social media, Werbesujets): logo **bottom RIGHT**
-- Minimum width: 20mm print / 70px screen
+- Logo text: ONLY Deep Black (#101921) or Plain White (#ffffff)
+- Documents: logo top LEFT
+- Advertising: logo bottom RIGHT
+- Minimum width: 20mm / 70px
 - Never rotate, distort, recolor, or add effects
 - "SPEDINATION" = FF Tisa Sans Bold | "moves" = Fira Sans Italic
 
@@ -96,158 +108,79 @@ Use for: **Social Media Profile Pictures, WhatsApp, Favicon, App Icons, Stamps**
 ## 3. Colors
 
 ### Primary
-| Name | HEX | RGB | CMYK |
-|---|---|---|---|
-| **Deep Black** | `#101921` | 16, 25, 33 | 100-61-32-96 |
-| **Lemon Yellow** | `#e2e200` | 226, 226, 0 | 7-0-100-0 |
-| **Plain White** | `#ffffff` | 255, 255, 255 | 0-0-0-0 |
+- Deep Black `#101921`
+- Lemon Yellow `#e2e200`
+- Plain White `#ffffff`
 
-### Secondary
-| Name | HEX | RGB | CMYK |
-|---|---|---|---|
-| **Lime Green** | `#93ca15` | 147, 202, 21 | 43-0-100-0 |
-| **Tree Green** | `#509f33` | 80, 159, 51 | 66-0-100-9 |
-
-### Tertiary
-| Name | HEX | RGB | CMYK |
-|---|---|---|---|
-| **Berry Pink** | `#7e1c4e` | 126, 28, 78 | 11-100-9-47 |
-| **Plum Blue** | `#3d3d5f` | 61, 61, 95 | 79-72-17-43 |
-| **Deep Ocean** | `#2e6f7e` | 46, 111, 126 | 78-28-30-27 |
-| **Street Grey** | `#545860` | 84, 88, 96 | 63-52-44-33 |
-
-### Color Rules
-- Lemon Yellow = dominant brand color
-- Secondary/tertiary colors: **never in the logo**
-- Photos with text/logo: desaturate → Deep Black overlay 20–40% opacity
-- **Lemon Yellow photo filter: never allowed**
+### Rules
+- Lemon Yellow = dominant accent
+- Never use secondary colors in logo
+- No yellow photo filter
 
 ---
 
 ## 4. Typography
 
-| Role | Font | Weight | Size |
-|---|---|---|---|
-| Main heading | FF Tisa Sans | Bold | 36pt |
-| Sub-heading | Fira Sans | Italic | 14pt |
-| Intermediate heading | FF Tisa Sans | Bold | 18pt |
-| Body text | FF Tisa Sans | Regular | 10pt |
-| Quiet emphasis | Fira Sans | Italic | 9pt |
-| Small print / AGB | FF Tisa Sans | Regular | 6.5pt |
-| **Office / Windows** | **Lucida Sans** | Regular | – |
-| **Fallback** | **Arial** | Regular | – |
+- FF Tisa Sans (main)
+- Fira Sans Italic (accent)
+- Lucida Sans (office)
+- Arial (fallback)
 
-**Rules:** Left-aligned, ragged right, no hyphenation. Large headers sit above a Lemon Yellow rule line. Office documents always use Lucida Sans.
+Rules:
+- left aligned
+- no hyphenation
 
 ---
 
 ## 5. SSE – Secondary Style Elements
 
-Rounded corner brackets from the logo icon. Visual constant across all Spedination communications.
-
-### Yellow SSE (standard)
-
-| File | Position | URL |
-|---|---|---|
-| `Spedination-SSE-gelb-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-links%20oben-RGB.png) |
-| `Spedination-SSE-gelb-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-rechts%20oben-RGB.png) |
-| `Spedination-SSE-gelb-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-links%20unten-RGB.png) |
-| `Spedination-SSE-gelb-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-rechts%20unten-RGB.png) |
-| `Spedination-SSE-gelb-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-gelb-Mitte-RGB.png) |
-
-### White SSE (exception only)
-
-| File | Position | URL |
-|---|---|---|
-| `Spedination-SSE-weiss-links oben-RGB.png` | Top left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-links%20oben-RGB.png) |
-| `Spedination-SSE-weiss-rechts oben-RGB.png` | Top right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-rechts%20oben-RGB.png) |
-| `Spedination-SSE-weiss-links unten-RGB.png` | Bottom left | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-links%20unten-RGB.png) |
-| `Spedination-SSE-weiss-rechts unten-RGB.png` | Bottom right | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-rechts%20unten-RGB.png) |
-| `Spedination-SSE-weiss-Mitte-RGB.png` | Detail / focus | [↓](https://raw.githubusercontent.com/kualko2/spedination/main/logos/Spedination-SSE-weiss-Mitte-RGB.png) |
-
-### SSE Rules
-- Default: **always Lemon Yellow**
-- White: only when Lemon Yellow doesn't work on the background
-- Never use SSE in secondary or tertiary colors
-- Documents: all four corners within printable margin (~8mm from physical edge)
-- Multi-line highlights: all four corners
-- Single-line highlights: bottom-left + top-right only
-- Middle element: to highlight a photo detail
+- Always Lemon Yellow
+- 4 corners for structure
+- white only if needed
+- never other colors
 
 ---
 
 ## 6. Document Layout
 
-### Header
-```
-[LOGO – top left]                    [Document title]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ (Lemon Yellow 3px)
-```
+Header:
+- logo top left
+- yellow line
 
-### Footer
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ (Grey 1px)
-Spedination GmbH · Sportplatzweg 5a, A-6336 Langkampfen | Spedination Zillertal GmbH · Sportplatzweg 3, A-6270 Uderns | www.spedination.com
-```
+Footer:
+- both company addresses
 
 ---
 
-## 6b. Design Patterns (AI Reference)
-
-Standard UI components used across all Spedination documents and HTML:
-
-### Step Badge
-- Lemon Yellow square/rectangle + step number in Deep Black Bold
-- Description text right of badge in `#f8f8f8` background
-
-### Section Title Bar
-- Deep Black background, Plain White bold text
-- Optional Lemon Yellow accent word or left border
-
-### Warning Box
-- Left border: 5px Lemon Yellow
-- Background: `#fffbe6`
-- Text: bold, color `#7b4000`
-
-### Info Box
-- Left border: 4px Street Grey
-- Background: `#f4f4f4`
-- Text: Street Grey
-
-### HTML Print Rule
-- Always add `print-color-adjust: exact !important` to all elements
-- Page size: `@page { size: A4; margin: 0; }`
-- SSE corners: `position: absolute`, min `8mm` from physical page edge
+## 6b. Design Patterns
 
 ### Logo handling in HTML/code
-- All logo and icon PNG files have **transparent backgrounds** – ready to use on any background color
-- For dark backgrounds: use the `negativ` or `1c weiss` variant
-- The logo icon may be used standalone (without text) in any primary color, preferably Lemon Yellow
+- All logo and icon PNG files are transparent
+- No background removal needed
+- Use correct variant depending on background
+- Icon can be used standalone
 
+---
 
 ## 7. AI Assistant Checklist
 
-- [ ] Logo top-left (documents) or bottom-right (advertising)
-- [ ] Logo only in Deep Black or Plain White
-- [ ] SSE: Lemon Yellow, all four corners
-- [ ] Accent color: Lemon Yellow `#e2e200`
-- [ ] Text: Deep Black `#101921`
-- [ ] Subtext: Street Grey `#545860`
-- [ ] Font: FF Tisa Sans → Lucida Sans (Office) → Arial (fallback)
-- [ ] Footer: both company addresses
-- [ ] Warning boxes: Lemon Yellow left border, background `#fffbe6`
-- [ ] HTML/CSS print: `print-color-adjust: exact`
+- [ ] Logo correct position
+- [ ] Only correct colors
+- [ ] SSE yellow
+- [ ] Font correct
+- [ ] Clean layout
 
 ---
 
 ## 8. Brand Tone
 
-- Direct, concise, honest – "Handschlagqualität"
-- Young and dynamic (target: 16–35 years old)
-- Informal ("per du" in German)
-- Networker mindset, digitally forward
-- Industry: FTL transport, international freight forwarding, DACH + Eastern Europe
+- direct
+- honest
+- young
+- practical
+- "per du"
 
+---
 
 ## Writing Style (Spedination Tone)
 
@@ -255,48 +188,33 @@ All written content must follow this style.
 
 ### Core principles
 - Write direct and clear
-- Keep sentences short and easy to understand
-- Focus on real problems and real solutions
-- Avoid complexity and unnecessary wording
-- Sound like a real person, not like marketing
+- Keep sentences short
+- Focus on real problems
+- Avoid complexity
+- Sound human
 
 ### Tone
-- human
 - confident
 - practical
-- straightforward
-- slightly provocative if it fits
+- slightly provocative
 
 ### Avoid
-- generic marketing phrases
 - buzzwords
 - corporate language
 - empty claims
-- long explanations without substance
 
 ### Write like this
-- describe real situations
-- explain simply
-- get to the point fast
-- use natural language
-- ask simple, open questions
+- real situations
+- simple language
+- clear message
 
 ### Spedination writing pattern
 
-Use this structure when possible:
-
-1. Describe a real situation or problem
-2. Show what typically goes wrong
-3. Present a simple, practical solution
-4. Highlight what makes it different
-5. End with a simple, open question
-
-Keep it natural, not forced.
-
-### Do NOT write like this
-- "We offer innovative logistics solutions"
-- "Your reliable partner for transport"
-- "State-of-the-art services"
+1. Describe a real situation  
+2. Show what goes wrong  
+3. Show simple solution  
+4. Show difference  
+5. Ask simple question  
 
 ### Example (correct)
 
@@ -308,8 +226,14 @@ one truck, one contact, no transshipment.
 
 ### Example (wrong)
 
-We provide efficient and innovative transport solutions tailored to your needs.
+We provide innovative logistics solutions tailored to your needs.
 
 ---
 
-*[github.com/kualko2/spedination](https://github.com/kualko2/spedination) · 2026*
+## Hard Rules (Never do this)
+
+- Never change logo colors  
+- Never use logo in wrong position  
+- Never use secondary colors for logo  
+- Never use generic marketing language  
+- Never use buzzwords  
