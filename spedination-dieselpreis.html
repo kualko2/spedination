@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dieselpreis-Rechner · Spedination</title>
+<style>
+  :root {
+    --black: #101921;
+    --yellow: #e2e200;
+    --white: #ffffff;
+    --grey-bg: #f4f4f2;
+    --grey-border: #d8d8d4;
+    --grey-text: #6b6b65;
+    --red: #c0392b;
+    --font: 'Arial Narrow', Arial, sans-serif;
+    --font-body: Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--grey-bg); color: var(--black); font-size: 14px; min-height: 100vh; }
+
+  header { background: var(--black); padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font); font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); }
+  .logo span { color: #4a6070; font-weight: 400; }
+  .header-tag { font-size: 11px; color: #4a6070; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .layout { display: grid; grid-template-columns: 290px 1fr; min-height: calc(100vh - 52px); }
+
+  aside { background: var(--white); border-right: 1px solid var(--grey-border); padding: 20px 18px; display: flex; flex-direction: column; gap: 18px; }
+  .field-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 6px; }
+  input[type=date], input[type=number] { width: 100%; border: 1px solid var(--grey-border); border-radius: 3px; padding: 7px 10px; font-size: 14px; color: var(--black); background: var(--white); outline: none; }
+  input[type=date]:focus, input[type=number]:focus { border-color: var(--black); }
+
+  .btn-group { display: flex; gap: 5px; margin-bottom: 8px; }
+  .btn-sm { flex: 1; padding: 5px 0; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--grey-border); border-radius: 3px; background: var(--white); cursor: pointer; color: var(--grey-text); }
+  .btn-sm:hover { border-color: var(--black); color: var(--black); }
+
+  .country-list { display: flex; flex-direction: column; gap: 1px; max-height: 360px; overflow-y: auto; padding-right: 2px; }
+  .country-list::-webkit-scrollbar { width: 4px; }
+  .country-list::-webkit-scrollbar-thumb { background: var(--grey-border); border-radius: 2px; }
+  .country-item { display: flex; align-items: center; gap: 7px; padding: 5px 7px; border-radius: 3px; cursor: pointer; }
+  .country-item:hover { background: var(--grey-bg); }
+  .country-item input[type=checkbox] { width: 14px; height: 14px; cursor: pointer; accent-color: var(--black); flex-shrink: 0; }
+  .country-item label { cursor: pointer; font-size: 13px; flex: 1; display: flex; justify-content: space-between; align-items: center; gap: 4px; }
+
+  .calc-btn { width: 100%; padding: 12px; background: var(--yellow); color: var(--black); border: none; border-radius: 3px; font-family: var(--font); font-size: 15px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; margin-top: auto; }
+  .calc-btn:hover { opacity: 0.85; }
+
+  main { padding: 20px 24px; }
+  .data-info { display: flex; align-items: center; gap: 7px; margin-bottom: 18px; font-size: 12px; color: var(--grey-text); }
+  .data-dot { width: 7px; height: 7px; border-radius: 50%; background: #27ae60; flex-shrink: 0; }
+
+  .metric-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 20px; }
+  .metric-card { background: var(--white); border: 1px solid var(--grey-border); border-radius: 4px; padding: 12px 14px; }
+  .metric-card.highlight { border-color: var(--black); border-width: 2px; }
+  .metric-label { font-size: 11px; color: var(--grey-text); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+  .metric-value { font-family: var(--font); font-size: 24px; font-weight: 700; color: var(--black); line-height: 1; }
+  .metric-value.red { color: var(--red); }
+  .metric-sub { font-size: 11px; color: var(--grey-text); margin-top: 3px; }
+
+  .table-wrap { background: var(--white); border: 1px solid var(--grey-border); border-radius: 4px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead { background: var(--black); color: var(--white); }
+  thead th { padding: 9px 12px; text-align: right; font-family: var(--font); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+  thead th:first-child { text-align: left; }
+  tbody tr { border-bottom: 1px solid var(--grey-border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #fafaf8; }
+  tbody td { padding: 9px 12px; text-align: right; white-space: nowrap; }
+  tbody td:first-child { text-align: left; font-weight: 500; }
+  .delta-cell { font-weight: 700; color: var(--red); }
+  .pct-cell { font-size: 12px; color: var(--grey-text); }
+
+  .empty-state { padding: 60px 20px; text-align: center; color: var(--grey-text); }
+  .empty-state .big { font-family: var(--font); font-size: 18px; margin-bottom: 6px; color: var(--black); }
+  .source-line { margin-top: 14px; font-size: 11px; color: var(--grey-text); }
+  .source-line a { color: var(--grey-text); }
+
+  @media (max-width: 750px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { border-right: none; border-bottom: 1px solid var(--grey-border); }
+    .metric-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SPEDINATION <span>&middot; Dieselpreis-Rechner</span></div>
+  <div class="header-tag">Quelle: EU Weekly Oil Bulletin</div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div>
+      <span class="field-label">Angebotsdatum</span>
+      <input type="date" id="offer-date" value="2026-02-15">
+    </div>
+    <div>
+      <span class="field-label">Verbrauch (L / 100 km)</span>
+      <input type="number" id="consumption" value="30" min="10" max="60" step="0.5">
+    </div>
+    <div>
+      <span class="field-label">L&auml;nder</span>
+      <div class="btn-group">
+        <button class="btn-sm" onclick="selectAll()">Alle</button>
+        <button class="btn-sm" onclick="selectNone()">Keine</button>
+        <button class="btn-sm" onclick="selectDefault()">Standard</button>
+      </div>
+      <div class="country-list">
+        <div class="country-item"><input type="checkbox" id="cb-EU" checked><label for="cb-EU"><span>EU-Durchschnitt (27)</span><span style="font-size:11px;color:#6b6b65;">EU</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-EUR"><label for="cb-EUR"><span>Eurozone-&Oslash;</span><span style="font-size:11px;color:#6b6b65;">EUR</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-AT" checked><label for="cb-AT"><span>&Ouml;sterreich</span><span style="font-size:11px;color:#6b6b65;">AT</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-DE" checked><label for="cb-DE"><span>Deutschland</span><span style="font-size:11px;color:#6b6b65;">DE</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-FR" checked><label for="cb-FR"><span>Frankreich</span><span style="font-size:11px;color:#6b6b65;">FR</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-IT"><label for="cb-IT"><span>Italien</span><span style="font-size:11px;color:#6b6b65;">IT</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-BE"><label for="cb-BE"><span>Belgien</span><span style="font-size:11px;color:#6b6b65;">BE</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-NL"><label for="cb-NL"><span>Niederlande</span><span style="font-size:11px;color:#6b6b65;">NL</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-PL"><label for="cb-PL"><span>Polen</span><span style="font-size:11px;color:#6b6b65;">PL</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-CZ"><label for="cb-CZ"><span>Tschechien</span><span style="font-size:11px;color:#6b6b65;">CZ</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-SK"><label for="cb-SK"><span>Slowakei</span><span style="font-size:11px;color:#6b6b65;">SK</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-HU"><label for="cb-HU"><span>Ungarn</span><span style="font-size:11px;color:#6b6b65;">HU</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-RO"><label for="cb-RO"><span>Rum&auml;nien</span><span style="font-size:11px;color:#6b6b65;">RO</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-SI"><label for="cb-SI"><span>Slowenien</span><span style="font-size:11px;color:#6b6b65;">SI</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-HR"><label for="cb-HR"><span>Kroatien</span><span style="font-size:11px;color:#6b6b65;">HR</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-ES"><label for="cb-ES"><span>Spanien</span><span style="font-size:11px;color:#6b6b65;">ES</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-PT"><label for="cb-PT"><span>Portugal</span><span style="font-size:11px;color:#6b6b65;">PT</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-GR"><label for="cb-GR"><span>Griechenland</span><span style="font-size:11px;color:#6b6b65;">GR</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-DK"><label for="cb-DK"><span>D&auml;nemark</span><span style="font-size:11px;color:#6b6b65;">DK</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-SE"><label for="cb-SE"><span>Schweden</span><span style="font-size:11px;color:#6b6b65;">SE</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-FI"><label for="cb-FI"><span>Finnland</span><span style="font-size:11px;color:#6b6b65;">FI</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-IE"><label for="cb-IE"><span>Irland</span><span style="font-size:11px;color:#6b6b65;">IE</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-LU"><label for="cb-LU"><span>Luxemburg</span><span style="font-size:11px;color:#6b6b65;">LU</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-LT"><label for="cb-LT"><span>Litauen</span><span style="font-size:11px;color:#6b6b65;">LT</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-LV"><label for="cb-LV"><span>Lettland</span><span style="font-size:11px;color:#6b6b65;">LV</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-EE"><label for="cb-EE"><span>Estland</span><span style="font-size:11px;color:#6b6b65;">EE</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-BG"><label for="cb-BG"><span>Bulgarien</span><span style="font-size:11px;color:#6b6b65;">BG</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-CY"><label for="cb-CY"><span>Zypern</span><span style="font-size:11px;color:#6b6b65;">CY</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-MT"><label for="cb-MT"><span>Malta</span><span style="font-size:11px;color:#6b6b65;">MT</span></label></div>
+        <div class="country-item"><input type="checkbox" id="cb-UK"><label for="cb-UK"><span>Ver. K&ouml;nigreich</span><span style="font-size:11px;color:#6b6b65;">UK</span></label></div>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculate()">Berechnen</button>
+  </aside>
+
+  <main>
+    <div class="data-info">
+      <div class="data-dot"></div>
+      <span>Datenstand: <strong id="stand-label"></strong> &nbsp;&middot;&nbsp; Aktualisierung: neue Excel hochladen &rarr; KI extrahiert Daten</span>
+    </div>
+
+    <div id="metrics" style="display:none;">
+      <div class="metric-row">
+        <div class="metric-card">
+          <div class="metric-label">Preis bei Angebot</div>
+          <div class="metric-value" id="m-offer">&mdash;</div>
+          <div class="metric-sub" id="m-offer-date">&mdash;</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Aktueller Preis</div>
+          <div class="metric-value" id="m-current">&mdash;</div>
+          <div class="metric-sub" id="m-current-date">&mdash;</div>
+        </div>
+        <div class="metric-card highlight">
+          <div class="metric-label">Mehrkosten / km</div>
+          <div class="metric-value red" id="m-delta">&mdash;</div>
+          <div class="metric-sub" id="m-pct">&Oslash; ausgew&auml;hlte L&auml;nder</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-area">
+      <div class="empty-state">
+        <div class="big">L&auml;nder ausw&auml;hlen &amp; berechnen</div>
+        Datum setzen, L&auml;nder w&auml;hlen, auf &bdquo;Berechnen&ldquo; klicken.
+      </div>
+    </div>
+
+    <div class="source-line">
+      Quelle: EU Weekly Oil Bulletin &middot; Europ&auml;ische Kommission, GD Energie &middot;
+      <a href="https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en" target="_blank">energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en</a>
+      &middot; Netto-Dieselpreis ohne Steuern (EUR/1000L)
+    </div>
+  </main>
+</div>
+
+<script>
+/* ================================================================
+   DATEN — Stand: 30.03.2026 (KW 14)
+   SO AKTUALISIEREN:
+   1. Neue Excel vom EU Oil Bulletin hochladen
+   2. Claude extrahiert neuen Datenblock
+   3. Neue Zeile ans Ende des PRICES-Objekts einfügen
+   4. DATA_STAND anpassen
+   ================================================================ */
+
+var DATA_STAND = "06.04.2026";
+
+var PRICES = {
+  "2026-01-05":{"EU":743.51,"EUR":740.97,"AT":703.37,"BE":707.15,"BG":702.96,"CY":766.6,"CZ":698.99,"DE":775.36,"DK":806.08,"EE":681.84,"ES":765.93,"FI":970.51,"FR":717.05,"GR":799.86,"HR":732.27,"HU":762.53,"IE":781.23,"IT":674.78,"LT":711.33,"LU":722.58,"LV":688.48,"MT":553.02,"NL":891.4,"PL":751.22,"PT":712.21,"RO":715.48,"SE":809.64,"SI":623.6,"SK":731.37},
+  "2026-01-12":{"EU":748.98,"EUR":747.96,"AT":688.37,"BE":717.45,"BG":700.54,"CY":753.86,"CZ":691.41,"DE":781.25,"DK":795.08,"EE":669.54,"ES":764.49,"FI":826.15,"FR":744.62,"GR":797.44,"HR":736.27,"HU":756.18,"IE":777.33,"IT":688.06,"LT":716.93,"LU":710.61,"LV":681.87,"MT":553.02,"NL":937.96,"PL":749.52,"PT":714.65,"RO":723.78,"SE":822.14,"SI":603.46,"SK":720.81},
+  "2026-01-19":{"EU":756.7,"EUR":757.29,"AT":696.71,"BE":708.11,"BG":684.96,"CY":750.12,"CZ":690.64,"DE":791.33,"DK":816.55,"EE":708.07,"ES":767.58,"FI":1000.21,"FR":758.84,"GR":801.48,"HR":735.47,"HU":774.75,"IE":778.63,"IT":688.34,"LT":729.93,"LU":742.24,"LV":680.49,"MT":553.02,"NL":953.79,"PL":740.24,"PT":730.1,"RO":736.23,"SE":834.0,"SI":598.92,"SK":732.19},
+  "2026-01-26":{"EU":783.38,"EUR":789.34,"AT":715.04,"BE":740.3,"BG":688.04,"CY":748.27,"CZ":698.33,"DE":902.99,"DK":827.69,"EE":711.34,"ES":774.3,"FI":962.13,"FR":774.58,"GR":808.73,"HR":759.47,"HU":787.04,"IE":782.21,"IT":698.8,"LT":755.81,"LU":742.24,"LV":691.1,"MT":553.02,"NL":942.98,"PL":735.54,"PT":743.92,"RO":748.32,"SE":856.8,"SI":596.92,"SK":752.51},
+  "2026-02-02":{"EU":789.26,"EUR":795.84,"AT":724.21,"BE":752.0,"BG":689.79,"CY":751.53,"CZ":706.53,"DE":907.14,"DK":848.96,"EE":716.26,"ES":780.85,"FI":1018.22,"FR":777.22,"GR":814.38,"HR":772.27,"HU":788.21,"IE":788.3,"IT":705.67,"LT":766.64,"LU":742.24,"LV":711.16,"MT":553.02,"NL":944.26,"PL":735.84,"PT":753.68,"RO":762.32,"SE":850.18,"SI":609.75,"SK":769.59},
+  "2026-02-09":{"EU":775.45,"EUR":778.84,"AT":731.71,"BE":748.05,"BG":689.79,"CY":759.38,"CZ":715.04,"DE":808.14,"DK":827.53,"EE":731.02,"ES":787.99,"FI":951.05,"FR":784.64,"GR":820.83,"HR":789.07,"HU":795.3,"IE":793.67,"IT":713.19,"LT":779.02,"LU":755.06,"LV":721.62,"MT":553.02,"NL":943.43,"PL":739.14,"PT":754.49,"RO":764.31,"SE":826.03,"SI":627.02,"SK":784.22},
+  "2026-02-16":{"EU":778.92,"EUR":781.86,"AT":722.54,"BE":792.49,"BG":689.79,"CY":769.9,"CZ":711.45,"DE":805.62,"DK":816.66,"EE":751.51,"ES":792.05,"FI":1018.81,"FR":783.01,"GR":822.44,"HR":789.87,"HU":798.1,"IE":794.89,"IT":716.85,"LT":766.5,"LU":755.06,"LV":723.41,"MT":553.02,"NL":951.84,"PL":744.83,"PT":751.24,"RO":768.58,"SE":850.81,"SI":635.29,"SK":785.03},
+  "2026-02-23":{"EU":781.04,"EUR":783.76,"AT":745.87,"BE":744.61,"BG":692.71,"CY":771.18,"CZ":715.27,"DE":824.1,"DK":859.49,"EE":712.16,"ES":797.18,"FI":874.27,"FR":767.27,"GR":824.06,"HR":789.07,"HU":797.68,"IE":796.52,"IT":722.04,"LT":780.8,"LU":787.54,"LV":727.96,"MT":553.02,"NL":989.97,"PL":755.95,"PT":765.87,"RO":778.32,"SE":797.18,"SI":644.93,"SK":785.03},
+  "2026-03-02":{"EU":812.36,"EUR":817.91,"AT":760.87,"BE":789.44,"BG":707.37,"CY":780.64,"CZ":730.18,"DE":890.49,"DK":870.14,"EE":742.49,"ES":812.01,"FI":1043.98,"FR":809.95,"GR":845.02,"HR":805.07,"HU":806.79,"IE":797.65,"IT":737.5,"LT":802.21,"LU":787.54,"LV":744.76,"MT":553.02,"NL":1003.17,"PL":760.68,"PT":790.26,"RO":799.56,"SE":893.09,"SI":645.68,"SK":784.22},
+  "2026-03-09":{"EU":1005.92,"EUR":1011.12,"AT":1039.21,"BE":926.1,"BG":758.29,"CY":817.83,"CZ":915.46,"DE":1185.45,"DK":1127.19,"EE":955.61,"ES":980.89,"FI":1116.57,"FR":1019.56,"GR":1038.57,"HR":829.07,"HU":870.71,"IE":804.89,"IT":859.26,"LT":1017.56,"LU":1049.93,"LV":946.7,"MT":553.02,"NL":1305.94,"PL":1011.41,"PT":977.83,"RO":858.54,"SE":1055.94,"SI":646.97,"SK":798.04},
+  "2026-03-16":{"EU":1079.85,"EUR":1085.81,"AT":1085.87,"BE":1030.29,"BG":867.04,"CY":924.5,"CZ":1031.59,"DE":1171.16,"DK":1201.95,"EE":1026.92,"ES":1139.01,"FI":1169.36,"FR":1073.64,"GR":1109.54,"HR":951.47,"HU":927.09,"IE":951.64,"IT":993.86,"LT":1059.39,"LU":1056.77,"LV":1051.1,"MT":553.02,"NL":1313.2,"PL":1052.13,"PT":1071.94,"RO":906.36,"SE":1222.99,"SI":740.53,"SK":834.63},
+  "2026-03-23":{"EU":1207.38,"EUR":1207.34,"AT":1215.04,"BE":1188.31,"BG":957.87,"CY":1020.32,"CZ":1187.6,"DE":1298.05,"DK":1341.37,"EE":1190.03,"ES":1233.71,"FI":1337.77,"FR":1149.83,"GR":1232.93,"HR":968.27,"HU":965.05,"IE":1075.21,"IT":1185.42,"LT":1182.35,"LU":1249.93,"LV":1137.05,"MT":553.02,"NL":1487.51,"PL":1218.08,"PT":1204.7,"RO":1040.34,"SE":1425.42,"SI":773.85,"SK":871.21},
+  "2026-03-30":{"EU":1246.86,"EUR":1245.31,"AT":1294.21,"BE":1239.07,"BG":1019.62,"CY":1137.76,"CZ":1220.08,"DE":1288.81,"DK":1319.6,"EE":1221.18,"ES":1285.51,"FI":1298.53,"FR":1216.5,"GR":1283.73,"HR":1174.8,"HU":933.94,"IE":1297.58,"IT":1193.27,"LT":1202.37,"LU":1249.08,"LV":1157.71,"MT":553.02,"NL":1477.74,"PL":1310.54,"PT":1225.84,"RO":1129.24,"SE":1356.02,"SI":968.22,"SK":963.89},
+  "2026-04-06":{"EU":1300.95,"EUR":1305.34,"AT":1364.21,"BE":1308.66,"BG":1082.54,"CY":1208.6,"CZ":1228.15,"DE":1413.18,"DK":1482.69,"EE":1239.21,"ES":1318.25,"FI":1288.65,"FR":1253.92,"GR":1246.64,"HR":1164.4,"HU":963.14,"IE":1233.11,"IT":1241.92,"LT":1246.45,"LU":1403.78,"LV":1164.32,"MT":553.02,"NL":1578.15,"PL":1338.56,"PT":1281.01,"RO":1121.0,"SE":1399.24,"SI":1090.51,"SK":1015.93}
+};
+
+var COUNTRY_NAMES = {
+  "EU":"EU-Durchschnitt (27)","EUR":"Eurozone-\u00d8","AT":"\u00d6sterreich","BE":"Belgien",
+  "BG":"Bulgarien","CY":"Zypern","CZ":"Tschechien","DE":"Deutschland","DK":"D\u00e4nemark",
+  "EE":"Estland","ES":"Spanien","FI":"Finnland","FR":"Frankreich","GR":"Griechenland",
+  "HR":"Kroatien","HU":"Ungarn","IE":"Irland","IT":"Italien","LT":"Litauen",
+  "LU":"Luxemburg","LV":"Lettland","MT":"Malta","NL":"Niederlande","PL":"Polen",
+  "PT":"Portugal","RO":"Rum\u00e4nien","SE":"Schweden","SI":"Slowenien","SK":"Slowakei","UK":"Ver. K\u00f6nigreich"
+};
+
+document.getElementById('stand-label').textContent = DATA_STAND;
+
+var DEFAULT_CODES  = ["EU","AT","DE","FR"];
+var sortedDates    = Object.keys(PRICES).sort();
+var latestDate     = sortedDates[sortedDates.length - 1];
+
+function findNearestDate(t) {
+  var d = new Date(t), best = null;
+  for (var i = 0; i < sortedDates.length; i++) {
+    if (new Date(sortedDates[i]) <= d) best = sortedDates[i]; else break;
+  }
+  return best;
+}
+function fmtDate(s) { var p = s.split('-'); return p[2]+'.'+p[1]+'.'+p[0]; }
+function fmt(n)     { return n.toFixed(3).replace('.',',') + ' \u20ac'; }
+function fmtInt(n)  { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
+
+function selectAll()  { var cb = document.querySelectorAll('.country-list input'); for(var i=0;i<cb.length;i++) cb[i].checked=true; }
+function selectNone() { var cb = document.querySelectorAll('.country-list input'); for(var i=0;i<cb.length;i++) cb[i].checked=false; }
+function selectDefault() {
+  selectNone();
+  for (var i=0; i<DEFAULT_CODES.length; i++) { var el=document.getElementById('cb-'+DEFAULT_CODES[i]); if(el) el.checked=true; }
+}
+
+function calculate() {
+  var offerInput  = document.getElementById('offer-date').value;
+  var consumption = parseFloat(document.getElementById('consumption').value) || 30;
+  var factor      = consumption / 100 / 1000;
+  if (!offerInput) { alert('Bitte ein Angebotsdatum eingeben.'); return; }
+  var offerKey = findNearestDate(offerInput);
+  if (!offerKey) { alert('Kein Datenpunkt vor dem gew\u00e4hlten Datum vorhanden.'); return; }
+
+  var rows = [], codes = Object.keys(COUNTRY_NAMES);
+  for (var i=0; i<codes.length; i++) {
+    var code = codes[i];
+    var cb = document.getElementById('cb-'+code);
+    if (!cb || !cb.checked) continue;
+    var pO = PRICES[offerKey][code], pC = PRICES[latestDate][code];
+    if (pO===undefined || pC===undefined) continue;
+    var kmO=pO*factor, kmC=pC*factor, delta=kmC-kmO, pct=(delta/kmO)*100;
+    rows.push({code:code, name:COUNTRY_NAMES[code], pO:pO, pC:pC, kmO:kmO, kmC:kmC, delta:delta, pct:pct});
+  }
+  if (!rows.length) { alert('Keine L\u00e4nder ausgew\u00e4hlt.'); return; }
+  rows.sort(function(a,b){return b.delta-a.delta;});
+
+  var sO=0,sC=0,sD=0,sP=0;
+  for(var j=0;j<rows.length;j++){sO+=rows[j].pO;sC+=rows[j].pC;sD+=rows[j].delta;sP+=rows[j].pct;}
+  var n=rows.length;
+
+  document.getElementById('metrics').style.display='';
+  document.getElementById('m-offer').textContent     = fmtInt(Math.round(sO/n))+' \u20ac/1000L';
+  document.getElementById('m-offer-date').textContent= fmtDate(offerKey)+(offerKey!==offerInput?' (n\u00e4chster Bulletinwert)':'');
+  document.getElementById('m-current').textContent   = fmtInt(Math.round(sC/n))+' \u20ac/1000L';
+  document.getElementById('m-current-date').textContent='Stand '+fmtDate(latestDate);
+  document.getElementById('m-delta').textContent     = '+'+fmt(sD/n);
+  document.getElementById('m-pct').textContent       = '+'+(sP/n).toFixed(1).replace('.',',')+' % \u00d8 ausgew\u00e4hlte L\u00e4nder';
+
+  var h='<div class="table-wrap"><table><thead><tr>'
+    +'<th>Land</th>'
+    +'<th>Preis '+fmtDate(offerKey)+'<br><span style="font-weight:400;font-size:10px;">\u20ac/1000L</span></th>'
+    +'<th>Preis '+fmtDate(latestDate)+'<br><span style="font-weight:400;font-size:10px;">\u20ac/1000L</span></th>'
+    +'<th>\u20ac/km Angebot</th><th>\u20ac/km aktuell</th><th>Mehrkosten/km</th><th>\u0394&nbsp;%</th>'
+    +'</tr></thead><tbody>';
+  for(var k=0;k<rows.length;k++){
+    var r=rows[k];
+    h+='<tr><td>'+r.name+'</td><td>'+fmtInt(Math.round(r.pO))+'</td><td>'+fmtInt(Math.round(r.pC))+'</td>'
+      +'<td>'+fmt(r.kmO)+'</td><td>'+fmt(r.kmC)+'</td>'
+      +'<td class="delta-cell">+'+fmt(r.delta)+'</td>'
+      +'<td class="pct-cell">+'+r.pct.toFixed(1).replace('.',',')+'&nbsp;%</td></tr>';
+  }
+  h+='</tbody></table></div>';
+  document.getElementById('result-area').innerHTML=h;
+}
+</script>
+</body>
+</html>
