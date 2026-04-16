@@ -304,4 +304,47 @@ We provide innovative logistics solutions tailored to your needs.
 - Never use logo in wrong position  
 - Never use secondary colors for logo  
 - Never use generic marketing language  
-- Never use buzzwords
+- Never use buzzwords  
+
+---
+
+## 9. Tools & Scripts
+
+### `create_ci_final.js` – CI Document Generator
+
+Node.js script that generates a fully branded Spedination `.docx` file using the `docx` library. Currently configured for the **IT-Richtlinie für Mitarbeiter (V2, 01.04.2026)** but serves as the canonical template for all CI-compliant Word documents.
+
+**Output:** `IT_Richtlinie_CI_final.docx`
+
+**Dependencies:**
+```
+npm install docx@9.6.1
+```
+
+**Required assets (place in working directory before running):**
+
+| Local filename | Source |
+|---|---|
+| `logo.png` | `Spedination-Logo-positiv-RGB.svg` (convert to PNG if needed) |
+| `sse_gelb_rechts_oben.png` | `Spedination-SSE-gelb-rechts oben-RGB.svg` |
+| `sse_gelb_links_unten.png` | `Spedination-SSE-gelb-links unten-RGB.svg` |
+| `sse_gelb_rechts_unten.png` | `Spedination-SSE-gelb-rechts unten-RGB.svg` |
+
+> ⚠️ **SSE color fix required:** After converting SVG/EPS → PNG, correct SSE color to exactly `#e2e200` (CMYK conversion shifts the yellow). Use ImageMagick: `convert input.png -fuzz 10% -fill "#e2e200" -opaque "#<wrong_hex>" output.png`
+
+**Run:**
+```bash
+node create_ci_final.js
+```
+
+**CI elements implemented:**
+- Header: Logo (180×99px) top-left + document title/version top-right
+- Lemon Yellow 3px rule below header
+- SSE corners (floating, page-relative, all pages): top-right, bottom-left, bottom-right
+- Section headings: Deep Black background, Plain White bold text
+- Body text: Lucida Sans, Deep Black
+- Bullet points: Lemon Yellow dash marker
+- Footer: both company addresses + page number
+- Signature block + Änderungsprotokoll table on last page
+
+**Reuse for other documents:** Replace the content sections (lines ~200–390) and update the header title strings. All layout, SSE, header/footer logic is reusable as-is.
